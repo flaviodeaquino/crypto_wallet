@@ -5,8 +5,8 @@ namespace :dev do
       show_spinner("Apagando o banco de dados ...") { %x(rails db:drop) }
       show_spinner("Criando o banco de dados ...") { %x(rails db:create) }
       show_spinner("Migrando as tabelas para o banco de dados ...") { %x(rails db:migrate) }
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_types)
+      %x(rails dev:add_coins)
     else
       puts "A aplicação não está em ambiente de desenvolvimento."
     end
@@ -19,36 +19,42 @@ namespace :dev do
                   { 
                       description: "Bitcoin",
                       acronym: "BTC",
-                      url_image: "https://w7.pngwing.com/pngs/450/133/png-transparent-bitcoin-cryptocurrency-virtual-currency-decal-blockchain-info-bitcoin-text-trademark-logo.png" 
+                      url_image: "https://w7.pngwing.com/pngs/450/133/png-transparent-bitcoin-cryptocurrency-virtual-currency-decal-blockchain-info-bitcoin-text-trademark-logo.png",
+                      mining_type: MiningType.find_by(acronym: 'PoW')
                   },
       
                   { 
                       description: "Ethereum",
                       acronym: "ETH",
-                      url_image: "https://w7.pngwing.com/pngs/368/176/png-transparent-ethereum-cryptocurrency-blockchain-bitcoin-logo-bitcoin-angle-triangle-logo-thumbnail.png" 
+                      url_image: "https://w7.pngwing.com/pngs/368/176/png-transparent-ethereum-cryptocurrency-blockchain-bitcoin-logo-bitcoin-angle-triangle-logo-thumbnail.png",
+                      mining_type: MiningType.all.sample
                   },
 
                   { 
                       description: "Dash",
                       acronym: "DASH",
-                      url_image: "https://w7.pngwing.com/pngs/9/37/png-transparent-dash-dashcoin-crypto-currency-and-coin-icon.png" 
+                      url_image: "https://w7.pngwing.com/pngs/9/37/png-transparent-dash-dashcoin-crypto-currency-and-coin-icon.png",
+                      mining_type: MiningType.all.sample
                   },
 
                   {
                     description: "Iota",
                       acronym: "IOT",
-                      url_image: "https://res.coinpaper.com/coinpaper/iota_miota_logo_e08343d2e4.png"
+                      url_image: "https://res.coinpaper.com/coinpaper/iota_miota_logo_e08343d2e4.png",
+                      mining_type: MiningType.all.sample
                   },
 
                   {
                     description: "ZCash",
                       acronym: "ZEC",
-                      url_image: "https://cryptologos.cc/logos/zcash-zec-logo.png"
+                      url_image: "https://cryptologos.cc/logos/zcash-zec-logo.png",
+                      mining_type: MiningType.all.sample
                   },
                   { 
                       description: "Dogecoin",
                       acronym: "DOGE",
-                      url_image: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/dogecoin-doge-icon.png" 
+                      url_image: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/dogecoin-doge-icon.png",
+                      mining_type: MiningType.all.sample
                   }
               ]
       
