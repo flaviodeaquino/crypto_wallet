@@ -3,8 +3,8 @@
 <%= render @coin %>
 
 <div>
-  <%= link_to "Editar essa moeda", edit_coin_path(@coin) %> |
-  <%= link_to "Voltar", coins_path %>
+  <%= link_to t('links.edit'), edit_coin_path(@coin) %> |
+  <%= link_to t('links.back'), coins_path %>
 
-  <%= button_to "Apagar registro dessa moeda", @coin, method: :delete, data: {confirm: 'Você tem certeza?'} %>
+  <%= button_to t('links.delete'), @coin, method: :delete, data: { confirm: 'Você tem certeza?' } %>
 </div>
