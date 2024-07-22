@@ -7,11 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
+
     <%= javascript_importmap_tags %>
+    
   </head>
 
   <body>
-    <h1>CABEÇALHO</h1>
+    <h1>CABEÇALHO - <%= params[:controller] %></h1>
 
     <%= yield %> <%# index.html.erb, edit.html.erb %>
 
