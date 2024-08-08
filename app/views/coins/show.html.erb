@@ -6,5 +6,5 @@
   <%= link_to t('links.edit'), edit_coin_path(@coin) %> |
   <%= link_to t('links.back'), coins_path %>
 
-  <%= button_to t('links.delete'), @coin, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+  <%= button_to t('links.delete'), @coin, method: :delete, data: { confirm: t('messages.confirm') } %>
 </div>

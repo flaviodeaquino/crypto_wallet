@@ -1,8 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Moedas</h1>
-<h2><%= cookies[:curso] %></h2>
-<h2><%= session[:curso] %></h2>
+<h1><%= Coin.model_name.human(count: @coins.count) %></h1>
 
 <div id="coins">
   <% @coins.each do |coin| %>
@@ -13,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "Novo registro de moeda", new_coin_path %>
+<%= link_to t('links.new'), new_coin_path, class:"btn btn-primary" %>

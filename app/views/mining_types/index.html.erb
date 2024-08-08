@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Mining types</h1>
+<h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
 
 <div id="mining_types">
   <% @mining_types.each do |mining_type| %>
@@ -11,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "New mining type", new_mining_type_path %>
+<%= link_to t('links.new'), new_mining_type_path, class:"btn btn-primary" %>
